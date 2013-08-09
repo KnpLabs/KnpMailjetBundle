@@ -4,4 +4,4 @@ parameters:
 services:
     knp_mailjet.api:
         class: %knp_mailjet.api.class%
-        arguments: [%mailjet_api_key%, %mailjet_secret_key%]
+        arguments: [%knp_mailjet.api_key%, %knp_mailjet.secret_key%]

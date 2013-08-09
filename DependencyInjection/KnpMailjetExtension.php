@@ -22,7 +22,12 @@ class KnpMailjetExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yml');
+        if (null !== $config['api_key'] && null !== $config['secret_key']) {
+            $container->setParameter('knp_mailjet.api_key',    $config['api_key']);
+            $container->setParameter('knp_mailjet.secret_key', $config['secret_key']);
+
+            $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+            $loader->load('services.yml');
+        }
     }
 }
