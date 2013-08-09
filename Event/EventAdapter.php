@@ -30,6 +30,11 @@ abstract class EventAdapter extends Event
         return sprintf('%s.%s', self::EVENT_PREFIX, $this->event->getType());
     }
 
+    public function getData()
+    {
+        return $this->event->getData();
+    }
+
     protected function setEvent(EventInterface $event)
     {
         $this->event = $event;

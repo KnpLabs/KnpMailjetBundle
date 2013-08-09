@@ -23,6 +23,7 @@ class KnpMailjetExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 
+        $container->setParameter('knp_mailjet.event.listener.class', $config['event_listener_class']);
         $loader->load('event.yml');
 
         if (null !== $config['api_key'] && null !== $config['secret_key']) {

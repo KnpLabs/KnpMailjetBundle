@@ -17,8 +17,12 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('api_key')->defaultNull()->info('Mailjet API key')->end()
-            ->scalarNode('secret_key')->defaultNull()->info('Mailjet API token')->end()
+                ->scalarNode('api_key')->defaultNull()->info('Mailjet API key')->end()
+                ->scalarNode('secret_key')->defaultNull()->info('Mailjet API token')->end()
+                ->scalarNode('event_listener_class')
+                    ->defaultValue('Knp\Bundle\MailjetBundle\Event\Listener\EventListener')
+                    ->info('Full class name of your implementation of EventListenerInterface, required to process Mailjet events')
+                ->end()
             ->end()
         ;
 

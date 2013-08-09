@@ -9,3 +9,15 @@ services:
     knp_mailjet.event.controller:
         class: %knp_mailjet.event.controller.class%
         arguments: ["@knp_mailjet.event.factory"]
+
+    knp_mailjet.event.listener:
+        class: %knp_mailjet.event.listener.class%
+        public: false
+        tags:
+            - { name: kernel.event_listener, event:  knp_mailjet.open,    method: onOpenEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.blocked, method: onBlockedEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.bounce,  method: onBounceEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.click,   method: onClickEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.spam,    method: onSpamEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.typofix, method: onTypofixEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.unsub,   method: onUnsubEvent }
