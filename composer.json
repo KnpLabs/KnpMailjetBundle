@@ -1,0 +1,21 @@
+{
+    "name": "knplabs/knp-mailjet-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 Bundle for initializing Mailjet PHP API wrapper and handling Event API callbacks",
+    "homepage": "https://github.com/KnpLabs/KnpMailjetBundle",
+    "keywords": ["mailjet", "api", "bundle"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "KnpLabs Team",
+            "homepage": "http://knplabs.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.8",
+        "knplabs/mailjet-api-php": "*"
+    },
+    "autoload": {
+        "psr-0": { "Knp\\Bundle\\MailjetBundle": "" }
+    }
+}
