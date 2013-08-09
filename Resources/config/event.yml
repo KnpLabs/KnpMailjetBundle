@@ -8,7 +8,10 @@ services:
 
     knp_mailjet.event.controller:
         class: %knp_mailjet.event.controller.class%
-        arguments: ["@knp_mailjet.event.factory"]
+        arguments:
+            - "@knp_mailjet.event.factory"
+            - "@event_dispatcher"
+            - "%knp_mailjet.event.endpoint_token%"
 
     knp_mailjet.event.listener:
         class: %knp_mailjet.event.listener.class%

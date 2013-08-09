@@ -25,6 +25,7 @@ class KnpMailjetExtension extends Extension
 
         $container->setParameter('knp_mailjet.event.listener.class', $config['event_listener_class']);
         $container->setParameter('knp_mailjet.event.endpoint_route', $config['event_endpoint_route']);
+        $container->setParameter('knp_mailjet.event.endpoint_token', $config['event_endpoint_token']);
         $loader->load('event.yml');
 
         if (null !== $config['api_key'] && null !== $config['secret_key']) {

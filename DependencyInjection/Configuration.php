@@ -27,6 +27,10 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('knp_mailjet_event_endpoint')
                     ->info('Route name of the event API endpoint')
                 ->end()
+                ->scalarNode('event_endpoint_token')
+                    ->defaultNull()
+                    ->info('Security token to validate endpoint request with')
+                ->end()
             ->end()
         ;
 

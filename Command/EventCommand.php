@@ -23,7 +23,9 @@ class EventCommand extends ContainerAwareCommand
     {
         $domain = $input->getArgument('domain');
 
-        $uri = $this->getRouter()->generate($this->getRouteName());
+        $uri = $this->getRouter()->generate($this->getRouteName(), array(
+            'token' => $this->getToken()
+        ));
 
         $output->writeln(sprintf('http://%s/%s', rtrim($domain, '/'), ltrim($uri, '/')));
     }
@@ -42,5 +44,13 @@ class EventCommand extends ContainerAwareCommand
     protected function getRouteName()
     {
         return $this->getContainer()->getParameter('knp_mailjet.event.endpoint_route');
+    }
+
+    /**
+     * @return string
+     */
+    protected function getToken()
+    {
+        return $this->getContainer()->getParameter('knp_mailjet.event.endpoint_token');
     }
 }

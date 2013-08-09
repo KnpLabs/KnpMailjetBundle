@@ -11,18 +11,20 @@ use Mailjet\Event\EventFactoryInterface;
 
 class EventController
 {
+    protected $token;
     protected $eventFactory;
     protected $eventDispatcher;
 
-    public function __construct(EventFactoryInterface $eventFactory, EventDispatcherInterface $eventDispatcher)
+    public function __construct(EventFactoryInterface $eventFactory, EventDispatcherInterface $eventDispatcher, $token = null)
     {
+        $this->token           = $token;
         $this->eventFactory    = $eventFactory;
         $this->eventDispatcher = $eventDispatcher;
     }
 
-    public function handleEventAction(Request $request)
+    public function handleEventAction(Request $request, $token = null)
     {
-        if ($this->validateRequest($request)) {
+        if ($this->validateRequest($request, $token)) {
             $status = 200;
 
             $this->processRequest($request);
@@ -51,13 +53,17 @@ class EventController
         return new JsonResponse(array(), $status);
     }
 
-    private function validateRequest(Request $request)
+    private function validateRequest(Request $request, $token = null)
     {
         if (!$request->isMethod('POST')) {
             return false;
         }
 
         if (!'application/json' !== $request->getContentType()) {
+            return false;
+        }
+
+        if ($this->token !== $token) {
             return false;
         }
 
