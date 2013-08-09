@@ -5,15 +5,19 @@ namespace Knp\Bundle\MailjetBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+
 use Mailjet\Event\EventFactoryInterface;
 
 class EventController
 {
     protected $eventFactory;
+    protected $eventDispatcher;
 
-    public function __construct(EventFactoryInterface $eventFactory)
+    public function __construct(EventFactoryInterface $eventFactory, EventDispatcherInterface $eventDispatcher)
     {
-        $this->eventFactory = $eventFactory;
+        $this->eventFactory    = $eventFactory;
+        $this->eventDispatcher = $eventDispatcher;
     }
 
     public function handleEventAction(Request $request)
@@ -33,6 +37,8 @@ class EventController
     {
         $data = $this->extractData($request);
         $event = $this->eventFactory->createEvent($data);
+
+        $this->eventDispatcher->dispatch($event->getType(), $event);
     }
 
     private function extractData(Request $request)

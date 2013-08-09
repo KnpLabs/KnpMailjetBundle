@@ -1,5 +1,5 @@
 parameters:
-    knp_mailjet.event.factory.class:    Mailjet\Event\EventFactory
+    knp_mailjet.event.factory.class:    Knp\Bundle\MailjetBundle\Event\EventFactory
     knp_mailjet.event.controller.class: Knp\Bundle\MailjetBundle\Controller\EventController
 
 services:
