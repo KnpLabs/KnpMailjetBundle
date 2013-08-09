@@ -9,7 +9,7 @@ use Mailjet\Event\EventInterface;
 /**
  * Adapter to bridge Mailjet API events with Symfony2 Event Dispatcher Component
  */
-class EventAdapter extends Event
+abstract class EventAdapter extends Event
 {
     const EVENT_PREFIX = 'knp_mailjet';
 
@@ -17,7 +17,7 @@ class EventAdapter extends Event
 
     public function __construct(EventInterface $event)
     {
-        $this->event = $event;
+        $this->setEvent($event);
     }
 
     public function getEvent()
@@ -28,5 +28,10 @@ class EventAdapter extends Event
     public function getType()
     {
         return sprintf('%s.%s', self::EVENT_PREFIX, $this->event->getType());
+    }
+
+    protected function setEvent(EventInterface $event)
+    {
+        $this->event = $event;
     }
 }
