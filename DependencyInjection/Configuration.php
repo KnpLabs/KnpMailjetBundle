@@ -23,6 +23,10 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('Knp\Bundle\MailjetBundle\Event\Listener\EventListener')
                     ->info('Full class name of your implementation of EventListenerInterface, required to process Mailjet events')
                 ->end()
+                ->scalarNode('event_endpoint_route')
+                    ->defaultValue('knp_mailjet_event_endpoint')
+                    ->info('Route name of the event API endpoint')
+                ->end()
             ->end()
         ;
 
