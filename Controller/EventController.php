@@ -3,17 +3,20 @@
 namespace Knp\Bundle\MailjetBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class EventController extends Controller
+use Mailjet\Event\EventFactoryInterface;
+
+class EventController
 {
-    public function __construct()
-    {
+    protected $eventFactory;
 
+    public function __construct(EventFactoryInterface $eventFactory)
+    {
+        $this->eventFactory = $eventFactory;
     }
 
     public function handleEventAction(Request $request)
     {
-
+        
     }
 }
