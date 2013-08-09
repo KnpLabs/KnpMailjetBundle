@@ -1,0 +1,3 @@
+knp_mailjet_event_endpoint:
+    pattern:  /mailjet-event-endpoint
+    defaults: { _controller: KnpMailjetBundle:Event:handleEvent }
