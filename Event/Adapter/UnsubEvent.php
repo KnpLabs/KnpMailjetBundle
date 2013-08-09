@@ -8,8 +8,13 @@ use Mailjet\Event\Events\UnsubEvent as BaseUnsubEvent;
 
 class UnsubEvent extends EventAdapter
 {
-    public function __construct(BaseUnsubEvent $event)
+    /**
+     * Override to provide specific class type-hint
+     *
+     * @param BaseUnsubEvent $event
+     */
+    public function setEvent(BaseUnsubEvent $event)
     {
-        parent::__construct($event);
+        parent::setEvent($event);
     }
 }

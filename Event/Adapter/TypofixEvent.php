@@ -8,8 +8,13 @@ use Mailjet\Event\Events\TypofixEvent as BaseTypofixEvent;
 
 class TypofixEvent extends EventAdapter
 {
-    public function __construct(BaseTypofixEvent $event)
+    /**
+     * Override to provide specific class type-hint
+     *
+     * @param BaseTypofixEvent $event
+     */
+    public function setEvent(BaseTypofixEvent $event)
     {
-        parent::__construct($event);
+        parent::setEvent($event);
     }
 }

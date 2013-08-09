@@ -8,8 +8,13 @@ use Mailjet\Event\Events\BlockedEvent as BaseBlockedEvent;
 
 class BlockedEvent extends EventAdapter
 {
-    public function __construct(BaseBlockedEvent $event)
+    /**
+     * Override to provide specific class type-hint
+     *
+     * @param BaseBlockedEvent $event
+     */
+    public function setEvent(BaseBlockedEvent $event)
     {
-        parent::__construct($event);
+        parent::setEvent($event);
     }
 }

@@ -8,8 +8,13 @@ use Mailjet\Event\Events\BounceEvent as BaseBounceEvent;
 
 class BounceEvent extends EventAdapter
 {
-    public function __construct(BaseBounceEvent $event)
+    /**
+     * Override to provide specific class type-hint
+     *
+     * @param BaseBounceEvent $event
+     */
+    public function setEvent(BaseBounceEvent $event)
     {
-        parent::__construct($event);
+        parent::setEvent($event);
     }
 }

@@ -8,8 +8,13 @@ use Mailjet\Event\Events\SpamEvent as BaseSpamEvent;
 
 class SpamEvent extends EventAdapter
 {
-    public function __construct(BaseSpamEvent $event)
+    /**
+     * Override to provide specific class type-hint
+     *
+     * @param BaseSpamEvent $event
+     */
+    public function setEvent(BaseSpamEvent $event)
     {
-        parent::__construct($event);
+        parent::setEvent($event);
     }
 }

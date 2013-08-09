@@ -8,8 +8,13 @@ use Mailjet\Event\Events\OpenEvent as BaseOpenEvent;
 
 class OpenEvent extends EventAdapter
 {
-    public function __construct(BaseOpenEvent $event)
+    /**
+     * Override to provide specific class type-hint
+     *
+     * @param BaseOpenEvent $event
+     */
+    public function setEvent(BaseOpenEvent $event)
     {
-        parent::__construct($event);
+        parent::setEvent($event);
     }
 }
