@@ -17,5 +17,6 @@
     },
     "autoload": {
         "psr-0": { "Knp\\Bundle\\MailjetBundle": "" }
-    }
+    },
+    "target-dir": "Knp/Bundle/MailjetBundle"
 }
