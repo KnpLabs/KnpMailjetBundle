@@ -169,6 +169,7 @@ class AppKernel extends Kernel
         );
     }
 }
+```
 
 For Event Tracking API you also need to import routing:
 
@@ -177,6 +178,7 @@ For Event Tracking API you also need to import routing:
 
 _knp_mailjet:
     resource: "@KnpMailjetBundle/Resources/config/routing.yml"
+```
 
 And that's it!
 
