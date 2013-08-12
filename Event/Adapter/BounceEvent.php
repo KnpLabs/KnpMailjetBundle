@@ -17,4 +17,12 @@ class BounceEvent extends EventAdapter
     {
         parent::setEvent($event);
     }
+
+    /**
+     * @return \Mailjet\Event\Events\BounceEvent
+     */
+    public function getEvent()
+    {
+        return parent::getEvent();
+    }
 }

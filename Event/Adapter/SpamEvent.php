@@ -17,4 +17,12 @@ class SpamEvent extends EventAdapter
     {
         parent::setEvent($event);
     }
+
+    /**
+     * @return \Mailjet\Event\Events\SpamEvent
+     */
+    public function getEvent()
+    {
+        return parent::getEvent();
+    }
 }

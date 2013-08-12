@@ -17,4 +17,12 @@ class TypofixEvent extends EventAdapter
     {
         parent::setEvent($event);
     }
+
+    /**
+     * @return \Mailjet\Event\Events\TypofixEvent
+     */
+    public function getEvent()
+    {
+        return parent::getEvent();
+    }
 }

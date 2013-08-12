@@ -17,4 +17,12 @@ class ClickEvent extends EventAdapter
     {
         parent::setEvent($event);
     }
+
+    /**
+     * @return \Mailjet\Event\Events\ClickEvent
+     */
+    public function getEvent()
+    {
+        return parent::getEvent();
+    }
 }

@@ -17,4 +17,12 @@ class BlockedEvent extends EventAdapter
     {
         parent::setEvent($event);
     }
+
+    /**
+     * @return \Mailjet\Event\Events\BlockedEvent
+     */
+    public function getEvent()
+    {
+        return parent::getEvent();
+    }
 }
