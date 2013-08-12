@@ -30,19 +30,7 @@ var_dump($userInfo);
 //(
 //    [username] => KnpLabs
 //    [email] => hello@Knplabs.com
-//    [locale] => en_US
-//    [currency] => USD
-//    [timezone] => America/New_York
-//    [firstname] => KnpLabs
-//    [lastname] =>
-//    [company_name] => KnpLabs
-//    [contact_phone] =>
-//    [address_street] =>
-//    [address_postal_code] =>
-//    [address_city] =>
-//    [address_country] =>
-//    [tracking_openers] => 1
-//    [tracking_clicks] => 1
+//    ...
 //)
 ```
 
@@ -105,6 +93,9 @@ Now you need to configure it in DIC, but be sure to specify `knp_mailjet.event.l
 ```
 
 And that's it, your endpoint is ready for Event Tracking API consumption!
+
+> If you don't know where to start with Event Listener implementation, take a look at the
+> [demo listener](Event/Listener/EventListener.php) and [its configuration](Resources/config/event.yml#L27-#L32), which simply logs the events.
 
 ### Securing Endpoint URL
 
