@@ -22,8 +22,8 @@ use Psr\Log\LoggerInterface;
  */
 class EventListener implements EventListenerInterface
 {
-    private $logger;
-    private $logMessageTemplate = 'Caught Mailjet event: %s with following data: %s';
+    protected $logger;
+    protected $logMessageTemplate = 'Caught Mailjet event: %s with following data: %s';
 
     public function __construct(LoggerInterface $logger)
     {
@@ -64,8 +64,8 @@ class EventListener implements EventListenerInterface
     {
         $this->logEvent($event);
     }
-    
-    private function logEvent(EventAdapter $event)
+
+    protected function logEvent(EventAdapter $event)
     {
         $this->logger->debug(sprintf($this->logMessageTemplate, $event->getType(), json_encode($event->getData())));
     }
