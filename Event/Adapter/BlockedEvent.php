@@ -9,16 +9,6 @@ use Mailjet\Event\Events\BlockedEvent as BaseBlockedEvent;
 class BlockedEvent extends EventAdapter
 {
     /**
-     * Override to provide specific class type-hint
-     *
-     * @param BaseBlockedEvent $event
-     */
-    public function setEvent(BaseBlockedEvent $event)
-    {
-        parent::setEvent($event);
-    }
-
-    /**
      * @return \Mailjet\Event\Events\BlockedEvent
      */
     public function getEvent()
