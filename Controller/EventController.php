@@ -59,10 +59,6 @@ class EventController
             return false;
         }
 
-        if (!'application/json' !== $request->getContentType()) {
-            return false;
-        }
-
         if ($this->token !== $token) {
             return false;
         }
