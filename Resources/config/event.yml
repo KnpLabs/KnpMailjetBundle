@@ -13,20 +13,16 @@ services:
             - "@event_dispatcher"
             - "%knp_mailjet.event.endpoint_token%"
 
-    knp_mailjet.event.listener:
-        abstract: true
-        tags:
-            - { name: kernel.event_listener, event:  knp_mailjet.open,    method: onOpenEvent }
-            - { name: kernel.event_listener, event:  knp_mailjet.blocked, method: onBlockedEvent }
-            - { name: kernel.event_listener, event:  knp_mailjet.bounce,  method: onBounceEvent }
-            - { name: kernel.event_listener, event:  knp_mailjet.click,   method: onClickEvent }
-            - { name: kernel.event_listener, event:  knp_mailjet.spam,    method: onSpamEvent }
-            - { name: kernel.event_listener, event:  knp_mailjet.typofix, method: onTypofixEvent }
-            - { name: kernel.event_listener, event:  knp_mailjet.unsub,   method: onUnsubEvent }
-
 #    # Example listener implementation
-#    knp_mailjet.event.listener.logger:
+#    knp_mailjet.event.listener:
 #        class:  Knp\Bundle\MailjetBundle\Event\Listener\EventListener
-#        parent: knp_mailjet.event.listener
 #        arguments:
 #            - "@logger"
+#        tags:
+#            - { name: kernel.event_listener, event:  knp_mailjet.open,    method: onOpenEvent }
+#            - { name: kernel.event_listener, event:  knp_mailjet.blocked, method: onBlockedEvent }
+#            - { name: kernel.event_listener, event:  knp_mailjet.bounce,  method: onBounceEvent }
+#            - { name: kernel.event_listener, event:  knp_mailjet.click,   method: onClickEvent }
+#            - { name: kernel.event_listener, event:  knp_mailjet.spam,    method: onSpamEvent }
+#            - { name: kernel.event_listener, event:  knp_mailjet.typofix, method: onTypofixEvent }
+#            - { name: kernel.event_listener, event:  knp_mailjet.unsub,   method: onUnsubEvent }

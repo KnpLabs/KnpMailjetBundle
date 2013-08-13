@@ -83,19 +83,27 @@ class EventListener implements EventListenerInterface
 }
 ```
 
-Now you need to configure it in DIC, but be sure to specify `knp_mailjet.event.listener` as parent service:
+Now you need to configure it in DIC, but be sure to specify the tags you want to listen to:
 
 ```yaml
     acme.demo.mailjet_listener:
         class:  Acme\DemoBundle\Listener\EventListener
-        parent: knp_mailjet.event.listener
+        tags:
+            - { name: kernel.event_listener, event:  knp_mailjet.open,    method: onOpenEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.blocked, method: onBlockedEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.bounce,  method: onBounceEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.click,   method: onClickEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.spam,    method: onSpamEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.typofix, method: onTypofixEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.unsub,   method: onUnsubEvent }
         arguments: []
+
 ```
 
 And that's it, your endpoint is ready for Event Tracking API consumption!
 
 > If you don't know where to start with Event Listener implementation, take a look at the
-> [demo listener](Event/Listener/EventListener.php) and [its configuration](Resources/config/event.yml#L27-#L32), which simply logs the events.
+> [demo listener](Event/Listener/EventListener.php) and [its configuration](Resources/config/event.yml#L16-#L28), which simply logs the events.
 
 ### Securing Endpoint URL
 
@@ -185,8 +193,7 @@ And that's it!
 ## Requirements
 
 * PHP >= 5.3.8
-* HTTP component of [Guzzle](http://guzzlephp.org/) library
-* (optional) Symfony2 Debug Component
+* knplabs/mailjet-api-php
 
 ## Contributing
 
