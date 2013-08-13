@@ -17,7 +17,7 @@ abstract class EventAdapter extends Event
 
     public function __construct(EventInterface $event)
     {
-        $this->setEvent($event);
+        $this->event = $event;
     }
 
     public function getEvent()
@@ -33,10 +33,5 @@ abstract class EventAdapter extends Event
     public function getData()
     {
         return $this->event->getData();
-    }
-
-    protected function setEvent(EventInterface $event)
-    {
-        $this->event = $event;
     }
 }
