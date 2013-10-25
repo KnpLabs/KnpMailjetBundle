@@ -16,7 +16,7 @@ class EventFactory extends BaseEventFactory
         EventData::EVENT_TYPOFIX => '\Knp\Bundle\MailjetBundle\Event\Adapter\TypofixEvent',
         EventData::EVENT_UNSUB   => '\Knp\Bundle\MailjetBundle\Event\Adapter\UnsubEvent'
     );
-    
+
     public function createEvent(array $data)
     {
         $event = parent::createEvent($data);

@@ -3,7 +3,6 @@
 namespace spec\Knp\Bundle\MailjetBundle\Event;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class EventFactorySpec extends ObjectBehavior
 {
