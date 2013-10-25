@@ -4,6 +4,7 @@ KnpMailjetBundle
 KnpMailjetBundle is a Symfony2 Bundle, mainly aimed at processing Mailjet [Event Tracking](https://www.mailjet.com/docs/event_tracking) API,
 but also provides service initialization for [mailjet-api-php](https://github.com/KnpLabs/mailjet-api-php) library.
 
+[![Build Status](https://travis-ci.org/KnpLabs/KnpMailjetBundle.png?branch=master)](https://travis-ci.org/KnpLabs/KnpMailjetBundle)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/KnpLabs/KnpMailjetBundle/badges/quality-score.png?s=98304706d5b454f88bfa524a22380e4dc3825129)](https://scrutinizer-ci.com/g/KnpLabs/KnpMailjetBundle/)
 
 ## Usage
