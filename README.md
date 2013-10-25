@@ -5,6 +5,7 @@ KnpMailjetBundle is a Symfony2 Bundle, mainly aimed at processing Mailjet [Event
 but also provides service initialization for [mailjet-api-php](https://github.com/KnpLabs/mailjet-api-php) library.
 
 [![Build Status](https://travis-ci.org/KnpLabs/KnpMailjetBundle.png?branch=master)](https://travis-ci.org/KnpLabs/KnpMailjetBundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/f52a11a7-4646-4a6e-8e40-72a59fa39650/mini.png)](https://insight.sensiolabs.com/projects/f52a11a7-4646-4a6e-8e40-72a59fa39650)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/KnpLabs/KnpMailjetBundle/badges/quality-score.png?s=98304706d5b454f88bfa524a22380e4dc3825129)](https://scrutinizer-ci.com/g/KnpLabs/KnpMailjetBundle/)
 [![Latest Stable Version](https://poser.pugx.org/knplabs/knp-mailjet-bundle/version.png)](https://packagist.org/packages/knplabs/knp-mailjet-bundle)
 [![Composer Downloads](https://poser.pugx.org/knplabs/knp-mailjet-bundle/d/total.png)](https://packagist.org/packages/knplabs/knp-mailjet-bundle)
