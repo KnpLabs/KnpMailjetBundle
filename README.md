@@ -138,7 +138,7 @@ $ curl -s http://getcomposer.org/installer | php
 Now add `KnpMailjetBundle` with Composer:
 
 ```bash
-$ php composer.phar require knplabs/KnpMailjetBundle:*
+$ php composer.phar require knplabs/knp-mailjet-bundle:*
 ```
 
 And that's it! Composer will automatically handle the rest.
@@ -148,7 +148,7 @@ Alternatively, you can manually add the dependency to `composer.json` file...
 ```json
 {
     "require": {
-        "knplabs/KnpMailjetBundle": "*"
+        "knplabs/knp-mailjet-bundle": "*"
     },
     "minimum-stability": "dev"
 }
