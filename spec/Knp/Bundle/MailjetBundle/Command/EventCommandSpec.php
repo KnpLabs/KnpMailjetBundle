@@ -60,6 +60,7 @@ class EventCommandSpec extends ObjectBehavior
     {
         $input->isInteractive()->willReturn(false);
         $input->validate()->willReturn(true);
+        $input->hasArgument(Argument::any())->willReturn(false);
         $input->bind(Argument::any())->shouldBeCalled();
         $input->getArgument('domain')->shouldBeCalled()->willReturn($this->domain);
         $container->getParameter('knp_mailjet.event.endpoint_route')->shouldBeCalled()->willReturn($this->routeName);
