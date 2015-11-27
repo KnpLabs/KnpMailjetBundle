@@ -17,6 +17,7 @@
         "knplabs/mailjet-api-php": "1.*"
     },
     "require-dev": {
+        "symfony/process": "~2.6|~3.0",
         "phpspec/phpspec": "2.4.*@beta"
     },
     "autoload": {
