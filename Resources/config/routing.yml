@@ -1,3 +1,3 @@
 knp_mailjet_event_endpoint:
-    pattern:  /mailjet-event-api-endpoint/{token}
+    path:  /mailjet-event-api-endpoint/{token}
     defaults: { _controller: knp_mailjet.event.controller:handleEventAction, token: null }
