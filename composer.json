@@ -17,7 +17,7 @@
         "knplabs/mailjet-api-php": "1.*"
     },
     "require-dev": {
-        "phpspec/phpspec": "2.0.*@dev"
+        "phpspec/phpspec": "2.4.0@beta"
     },
     "autoload": {
         "psr-0": { "Knp\\Bundle\\MailjetBundle": "" }
