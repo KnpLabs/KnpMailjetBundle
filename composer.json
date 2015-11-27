@@ -13,11 +13,12 @@
     ],
     "require": {
         "php": ">=5.3.8",
-        "symfony/framework-bundle": "2.*",
+        "symfony/framework-bundle": "~2.3|~3.0",
         "knplabs/mailjet-api-php": "1.*"
     },
     "require-dev": {
-        "phpspec/phpspec": "2.0.*@dev"
+        "symfony/process": "~2.6|~3.0",
+        "phpspec/phpspec": "2.4.*@beta"
     },
     "autoload": {
         "psr-0": { "Knp\\Bundle\\MailjetBundle": "" }
