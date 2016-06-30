@@ -19,8 +19,8 @@ Add api/secret keys in `config.yml` and it's up!
 ```yaml
 # app/config.yml
 knp_mailjet:
-    api_key:    %mailjet_api_key%
-    secret_key: %mailjet_secret_key%
+    api_key:    "%mailjet_api_key%"
+    secret_key: "%mailjet_secret_key%"
 ```
 
 Now you can access RESTful API via DIC by calling `knp_mailjet.api` service:
