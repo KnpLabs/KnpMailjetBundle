@@ -4,10 +4,10 @@ parameters:
 
 services:
     knp_mailjet.event.factory:
-        class: %knp_mailjet.event.factory.class%
+        class: "%knp_mailjet.event.factory.class%"
 
     knp_mailjet.event.controller:
-        class: %knp_mailjet.event.controller.class%
+        class: "%knp_mailjet.event.controller.class%"
         arguments:
             - "@knp_mailjet.event.factory"
             - "@event_dispatcher"
