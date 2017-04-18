@@ -12,6 +12,12 @@ but also provides service initialization for [mailjet-api-php](https://github.co
 
 ## Usage
 
+### Installation
+
+```
+composer require knplabs/knp-mailjet-bundle
+```
+
 ### RESTful API as a service
 
 Add api/secret keys in `config.yml` and it's up!
