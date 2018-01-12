@@ -6,8 +6,8 @@ use Knp\Bundle\MailjetBundle\Event\Adapter\BlockedEvent;
 use Knp\Bundle\MailjetBundle\Event\Adapter\BounceEvent;
 use Knp\Bundle\MailjetBundle\Event\Adapter\ClickEvent;
 use Knp\Bundle\MailjetBundle\Event\Adapter\OpenEvent;
+use Knp\Bundle\MailjetBundle\Event\Adapter\SentEvent;
 use Knp\Bundle\MailjetBundle\Event\Adapter\SpamEvent;
-use Knp\Bundle\MailjetBundle\Event\Adapter\TypofixEvent;
 use Knp\Bundle\MailjetBundle\Event\Adapter\UnsubEvent;
 
 use Knp\Bundle\MailjetBundle\Event\EventAdapter;
@@ -28,6 +28,11 @@ class EventListener implements EventListenerInterface
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
+    }
+
+    public function onSentEvent(SentEvent $event)
+    {
+        $this->logEvent($event);
     }
 
     public function onOpenEvent(OpenEvent $event)
@@ -56,11 +61,6 @@ class EventListener implements EventListenerInterface
     }
 
     public function onBlockedEvent(BlockedEvent $event)
-    {
-        $this->logEvent($event);
-    }
-
-    public function onTypofixEvent(TypofixEvent $event)
     {
         $this->logEvent($event);
     }

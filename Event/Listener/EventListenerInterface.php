@@ -8,7 +8,7 @@ use Knp\Bundle\MailjetBundle\Event\Adapter\OpenEvent,
     Knp\Bundle\MailjetBundle\Event\Adapter\UnsubEvent,
     Knp\Bundle\MailjetBundle\Event\Adapter\BounceEvent,
     Knp\Bundle\MailjetBundle\Event\Adapter\BlockedEvent,
-    Knp\Bundle\MailjetBundle\Event\Adapter\TypofixEvent;
+    Knp\Bundle\MailjetBundle\Event\Adapter\SentEvent;
 
 interface EventListenerInterface
 {
@@ -18,5 +18,5 @@ interface EventListenerInterface
     public function onUnsubEvent(UnsubEvent $event);
     public function onBounceEvent(BounceEvent $event);
     public function onBlockedEvent(BlockedEvent $event);
-    public function onTypofixEvent(TypofixEvent $event);
+    public function onSentEvent(SentEvent $event);
 }

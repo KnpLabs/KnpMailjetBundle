@@ -95,12 +95,12 @@ Now you need to configure it in DIC, but be sure to specify the tags you want to
     acme.demo.mailjet_listener:
         class:  Acme\DemoBundle\Listener\EventListener
         tags:
+            - { name: kernel.event_listener, event:  knp_mailjet.sent,    method: onSentEvent }
             - { name: kernel.event_listener, event:  knp_mailjet.open,    method: onOpenEvent }
-            - { name: kernel.event_listener, event:  knp_mailjet.blocked, method: onBlockedEvent }
-            - { name: kernel.event_listener, event:  knp_mailjet.bounce,  method: onBounceEvent }
             - { name: kernel.event_listener, event:  knp_mailjet.click,   method: onClickEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.bounce,  method: onBounceEvent }
             - { name: kernel.event_listener, event:  knp_mailjet.spam,    method: onSpamEvent }
-            - { name: kernel.event_listener, event:  knp_mailjet.typofix, method: onTypofixEvent }
+            - { name: kernel.event_listener, event:  knp_mailjet.blocked, method: onBlockedEvent }
             - { name: kernel.event_listener, event:  knp_mailjet.unsub,   method: onUnsubEvent }
         arguments: []
 
