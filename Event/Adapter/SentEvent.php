@@ -4,10 +4,10 @@ namespace Knp\Bundle\MailjetBundle\Event\Adapter;
 
 use Knp\Bundle\MailjetBundle\Event\EventAdapter;
 
-class TypofixEvent extends EventAdapter
+class SentEvent extends EventAdapter
 {
     /**
-     * @return \Mailjet\Event\Events\TypofixEvent
+     * @return \Mailjet\Event\Events\SentEvent
      */
     public function getEvent()
     {
